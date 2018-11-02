@@ -36,7 +36,7 @@ def find_max_crossing_subarray(array, low, mid, right):
     left_sum = array[mid]
     sum = 0
     max_left = mid
-    for i in range(mid,low,-1):
+    for i in range(mid,low,-1): #range函数的反序访问的方法，在步长的地方减一即可
         sum = sum + array[i]
         if sum > left_sum:
             left_sum = sum
