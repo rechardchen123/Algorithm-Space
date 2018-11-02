@@ -36,7 +36,7 @@ def find_max_crossing_subarray(array, low, mid, right):
     left_sum = array[mid]
     sum = 0
     max_left = mid
-    for i in range(mid,low):
+    for i in range(mid,low,-1):
         sum = sum + array[i]
         if sum > left_sum:
             left_sum = sum
@@ -44,12 +44,11 @@ def find_max_crossing_subarray(array, low, mid, right):
     max_right = mid+1
     right_sum = array[mid+1]
     sum = 0
-    for j in range(mid + 1, right):
+    for j in range(mid + 1, right,1):
         sum = sum + array[j]
         if sum > right_sum:
             right_sum = sum
             max_right = j
-
     return max_left, max_right, left_sum + right_sum
 
 array = [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
